@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced iOS Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display-container">
+            <div class="previous-operand"></div>
+            <div class="current-operand">0</div>
+        </div>
+        
+        <div class="converter-panel" id="converterPanel">
+            <select id="converterType">
+                <option value="length">Length Converter</option>
+                <option value="weight">Weight Converter</option>
+                <option value="currency">Currency (NPR to USD)</option>
+            </select>
+            <div class="converter-inputs">
+                <input type="number" id="fromValue" placeholder="Value">
+                <select id="fromUnit">
+                    <option value="cm">Centimeters</option>
+                    <option value="m">Meters</option>
+                    <option value="km">Kilometers</option>
+                    <option value="in">Inches</option>
+                    <option value="ft">Feet</option>
+                    <option value="mi">Miles</option>
+                </select>
+                <span>to</span>
+                <select id="toUnit">
+                    <option value="in">Inches</option>
+                    <option value="ft">Feet</option>
+                    <option value="mi">Miles</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="m">Meters</option>
+                    <option value="km">Kilometers</option>
+                </select>
+                <div class="converter-result" id="converterResult">Result: 0</div>
+            </div>
+            <button class="close-converter" id="closeConverter">Close</button>
+        </div>
+        
+        <div class="buttons-grid">
+            <button class="span-2 function-btn">AC</button>
+            <button class="function-btn">DEL</button>
+            <button class="operation-btn">÷</button>
+            
+            <button class="scientific-btn">sin</button>
+            <button class="scientific-btn">cos</button>
+            <button class="scientific-btn">tan</button>
+            <button class="operation-btn">×</button>
+            
+            <button class="scientific-btn">π</button>
+            <button class="scientific-btn">x²</button>
+            <button class="scientific-btn">√</button>
+            <button class="operation-btn">-</button>
+            
+            <button class="scientific-btn">!</button>
+            <button class="scientific-btn">(</button>
+            <button class="scientific-btn">)</button>
+            <button class="operation-btn">+</button>
+            
+            <button class="converter-btn">Convert</button>
+            <button class="number-btn">0</button>
+            <button class="number-btn">.</button>
+            <button class="operation-btn equals-btn">=</button>
+        </div>
+        
+        <div class="tip-calculator" id="tipPanel">
+            <h3>Tip Calculator</h3>
+            <div class="tip-input">
+                <label>Bill Amount:</label>
+                <input type="number" id="billAmount" placeholder="0.00">
+            </div>
+            <div class="tip-input">
+                <label>Tip Percentage:</label>
+                <input type="number" id="tipPercentage" placeholder="15" value="15">
+            </div>
+            <div class="tip-result">
+                <div>Tip Amount: <span id="tipAmount">0.00</span></div>
+                <div>Total Amount: <span id="totalAmount">0.00</span></div>
+            </div>
+            <button class="close-tip" id="closeTip">Close</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
