@@ -1,0 +1,211 @@
+:root {
+    --bg-color: #000000;
+    --display-color: #1c1c1e;
+    --number-btn: #333333;
+    --number-btn-text: #ffffff;
+    --operation-btn: #ff9f0a;
+    --operation-btn-text: #ffffff;
+    --function-btn: #a5a5a5;
+    --function-btn-text: #000000;
+    --scientific-btn: #2d2d2d;
+    --scientific-btn-text: #ffffff;
+    --converter-btn: #007aff;
+    --equals-btn-hover: #ffb340;
+    --operation-btn-hover: #ffb340;
+    --number-btn-hover: #737373;
+    --function-btn-hover: #d9d9d9;
+    --scientific-btn-hover: #3d3d3d;
+    --converter-btn-hover: #5a9eff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.calculator {
+    width: 320px;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.display-container {
+    padding: 20px;
+    background-color: var(--display-color);
+    text-align: right;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    height: 24px;
+    overflow: hidden;
+}
+
+.current-operand {
+    color: white;
+    font-size: 3rem;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 15px;
+}
+
+button {
+    border: none;
+    border-radius: 50%;
+    height: 65px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.number-btn {
+    background-color: var(--number-btn);
+    color: var(--number-btn-text);
+}
+
+.number-btn:hover {
+    background-color: var(--number-btn-hover);
+}
+
+.operation-btn {
+    background-color: var(--operation-btn);
+    color: var(--operation-btn-text);
+    font-size: 1.8rem;
+}
+
+.operation-btn:hover {
+    background-color: var(--operation-btn-hover);
+}
+
+.function-btn {
+    background-color: var(--function-btn);
+    color: var(--function-btn-text);
+}
+
+.function-btn:hover {
+    background-color: var(--function-btn-hover);
+}
+
+.scientific-btn {
+    background-color: var(--scientific-btn);
+    color: var(--scientific-btn-text);
+    font-size: 1.2rem;
+}
+
+.scientific-btn:hover {
+    background-color: var(--scientific-btn-hover);
+}
+
+.converter-btn {
+    background-color: var(--converter-btn);
+    color: white;
+}
+
+.converter-btn:hover {
+    background-color: var(--converter-btn-hover);
+}
+
+.equals-btn:hover {
+    background-color: var(--equals-btn-hover);
+}
+
+.span-2 {
+    grid-column: span 2;
+    border-radius: 35px;
+    justify-content: flex-start;
+    padding-left: 27px;
+}
+
+.converter-panel, .tip-calculator {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--display-color);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    z-index: 10;
+    color: white;
+}
+
+.converter-panel select, .converter-panel input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--number-btn);
+    color: white;
+}
+
+.converter-inputs {
+    margin: 15px 0;
+}
+
+.converter-result {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.close-converter, .close-tip {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--operation-btn);
+}
+
+.tip-input {
+    margin: 10px 0;
+}
+
+.tip-input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.tip-input input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--number-btn);
+    color: white;
+}
+
+.tip-result div {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
